@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Benefit Analyser</title>
+    
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="functions.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <style>
+      #row_0 td { vertical-align: middle; }
+    </style>
+    
+  </head>
+  <body>
+    <div class="jumbotron" style="overflow: auto">
+        <div class="page-header">
+          <h1>Cost Benefit Analyser<br />
+              <small>Create simple & fast a Cost Benefit Analysis</small>
+          </h1>
+        </div>
+        <a href="example.html" class="btn btn-default" target="_blank">
+            View example <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </a>
+        <h3>Evaluation Range</h3>
+        <div class="input-group col-lg-4">
+            <span class="input-group-addon" style="width: 150px">
+                Min
+            </span>
+            <input type="text" class="form-control" id="minEvaluationValue">
+            <span class="input-group-addon" style="width: 150px">
+                Max
+            </span>
+            <input type="text" class="form-control" id="maxEvaluationValue">
+            <span class="input-group-addon"
+                      data-toggle="tooltip" 
+                      data-placement="top" 
+                      title="Define the range of the evalauation. Min for the lowest evalauation, max for the highest evalauation."
+                      style="cursor: pointer"
+                      >
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            </span>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="submitMinMaxEvaluation">
+                    Apply <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+                </button>
+            </span>
+        </div>
+        
+        <br />
+        
+        <h3>Score Range</h3>
+        <div class="input-group col-lg-4">
+            <span class="input-group-addon" style="width: 150px">
+                Min
+            </span>
+            <input type="text" class="form-control" id="minScoreValue">
+            <span class="input-group-addon" style="width: 150px">
+                Max
+            </span>
+            <input type="text" class="form-control" id="maxScoreValue">
+            <span class="input-group-addon"
+                      data-toggle="tooltip" 
+                      data-placement="top" 
+                      title="Define the range of the score. Min for the lowest score, max for the highest score."
+                      style="cursor: pointer"
+                      >
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            </span>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="submitMinMaxScore">
+                    Apply <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+                </button>
+            </span>
+        </div>
+        
+        <br />
+        
+        
+        <table class="table table-bordered" id="table">
+            <tr class="tableRow" id="row_0">
+                <td class="col col_0" id="col_0_row_0">
+                    <h3>Measurement Parameter</h3>
+                </td>
+                <td class="col col_1" id="col_1_row_0">
+                    <h3>Evaluation</h3>
+                </td>
+                <td class="col col_2" id="col_2_row_0">
+                    <div class="input-group col-lg-2" >
+                        <span class="input-group-btn" id="addCompetitorDiv">
+                            <button class="btn btn-default" type="button" id="addCompetitor">
+                                Add Competitor <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                            </button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr id="addRowRow">
+                <td>
+                    <div class="input-group col-lg-2">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="addRowColumn">
+                                Add Measurement Parameter <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                            </button>
+                        </span>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="resultRow">
+                <td id="col_0_resultRow" class="col col_0"><h3>Total Score</h3></td>
+                <td id="col_1_resultRow" class="col col_1">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-lg" type="button" id="calculateTotal">
+                            Calculate Total <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+                        </button>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+  </body>
+</html>
